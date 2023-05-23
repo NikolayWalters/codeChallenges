@@ -57,6 +57,25 @@ def isUnique(string):
 
 string = "abcdefgg"
 if isUnique(string):
-    print("3. All characters are unique")
+	print("3. All characters are unique")
 else:
-    print("3. Non-unique character present in the string")
+	print("3. Non-unique character present in the string")
+
+
+
+def isUniqueWithoutDS(string):
+	"""
+	Check if a string has all unique characters without using dictionaries or sets
+	"""
+	n = len(string)
+	for i in range(n - 1):
+		for j in range(i + 1, n):
+			if string[i] == string[j]:
+				return False
+	return True
+
+string = 'abcde'
+if isUniqueWithoutDS(string):
+	print("4. All characters are unique")
+else:
+	print("4. Non-unique character present in the string")
