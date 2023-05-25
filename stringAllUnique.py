@@ -79,3 +79,6 @@ if isUniqueWithoutDS(string):
 	print("4. All characters are unique")
 else:
 	print("4. Non-unique character present in the string")
+
+# NB could also add a check where string length <= 128 
+# since only 128 unique characters (or 256 for extended ASCII)

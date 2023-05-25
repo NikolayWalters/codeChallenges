@@ -56,3 +56,6 @@ string1 = "abc"
 string2 = "bca"
 isPermutation = checkPermutation(string1, string2)
 print(isPermutation)
+
+# NB quick way to improve:
+# check if len(string1) == len(string2)
