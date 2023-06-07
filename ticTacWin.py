@@ -10,17 +10,31 @@ Design an algorithm to figure out if someone has won a game of tic-tac-toe.
 # horizontal check
 def horizontal_check(array):
 	for row in array:
-    	count = 0
-    	for col3 in range(len(array[0])-2):
-        	check = sum(row[count:count+3])
-        	count = count+1
-        	if abs(check)==3:
-            	print('Winner!')
-            	break
+		count = 0
+		for col3 in range(len(array[0])-2):
+			check = sum(row[count:count+3])
+			count = count+1
+			if abs(check)==3:
+				print('Winner!')
+				break
 
 # vertical check
+# NB very easy to just convert into a numpy array
+# then transpose it and send it to horizontal_check
+# but I'll pretend that we can't import numpy
 def vertical_check(array):
-	pass
+	for col in range(len(array[0])):
+	count = 0
+		for row3 in range(len(array)-2):
+			tmpArr = [array[count][col],array[count+1][col],array[count+1][col]]
+			check = sum(tmpArr)
+			count = count+1
+			if abs(check)==3:
+				print('Winner!')
+				break
+
+
+	
 
 # diagonal check
 def diagonal_check(array):
