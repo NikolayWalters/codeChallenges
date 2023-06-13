@@ -24,6 +24,11 @@ def find_cutting_line(square1, square2):
     if center1 == center2:
         print('Centers overlap')
         return float('inf'),float('inf')
+
+    # in case the x position of the centers is the same
+    if center1[0] - center2[0] == 0:
+        print('infinite gradent')
+        return float('inf'),float('inf')
     
     # Calculate the line
     slope = (center2[1] - center1[1]) / (center2[0] - center1[0])
@@ -41,5 +46,10 @@ print(f"The equation of the line is y = {slope}*x + {intercept}")
 
 square1 = Square(1, 1, 3)
 square2 = Square(1, 1, 3)
+slope, intercept = find_cutting_line(square1, square2)
+print(f"The equation of the line is y = {slope}*x + {intercept}")
+
+square1 = Square(1, 1, 3)
+square2 = Square(1, 2, 3)
 slope, intercept = find_cutting_line(square1, square2)
 print(f"The equation of the line is y = {slope}*x + {intercept}")
